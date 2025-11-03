@@ -1,0 +1,318 @@
+/**
+ * Contact Page Custom Styles
+ *
+ * This file contains custom CSS for the contact page.
+ * These styles will be loaded in addition to Tailwind CSS.
+ *
+ * Usage: Import this file in your contact page component
+ * import '../../../public/css/pages/contact.css';
+ */
+
+/* Hero Section */
+.contact-hero-section {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid;
+  background: linear-gradient(135deg, rgb(255, 247, 237) 0%, rgb(254, 243, 199) 50%, rgb(253, 230, 138) 100%);
+}
+
+.dark .contact-hero-section {
+  background: linear-gradient(135deg, rgb(17, 24, 39) 0%, rgba(234, 88, 12, 0.2) 50%, rgba(217, 119, 6, 0.2) 100%);
+}
+
+.contact-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgb(226, 232, 240) 1px, transparent 1px),
+                    linear-gradient(90deg, rgb(226, 232, 240) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(0deg, white, rgba(255, 255, 255, 0.6));
+}
+
+.dark .contact-hero-grid-bg {
+  background-image: linear-gradient(rgba(51, 65, 85, 0.25) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
+}
+
+/* Contact Badge */
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  background: rgba(255, 107, 0, 0.1);
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Quick Contact Cards */
+.contact-quick-card {
+  border-radius: 0.75rem;
+  border: 1px solid;
+  background: rgba(var(--background), 0.5);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact-quick-icon-container {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+  margin: 0 auto 0.75rem;
+}
+
+.contact-quick-icon-blue {
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+}
+
+.contact-quick-icon-purple {
+  background: linear-gradient(135deg, rgb(251, 146, 60), rgb(255, 107, 0));
+}
+
+.contact-quick-icon-green {
+  background: linear-gradient(135deg, rgb(34, 197, 94), rgb(16, 185, 129));
+}
+
+/* Contact Form */
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid;
+  background: var(--card);
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-textarea {
+  display: flex;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid var(--input);
+  background: var(--background);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  ring-offset-color: var(--background);
+}
+
+.contact-form-textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.contact-form-textarea:focus-visible {
+  outline: none;
+  ring: 2px solid var(--ring);
+  ring-offset: 2px;
+}
+
+.contact-form-textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Success Message */
+.contact-success-container {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 2px solid rgba(34, 197, 94, 0.2);
+  background: rgb(240, 253, 244);
+  animation: slideInUp 0.3s ease;
+}
+
+.dark .contact-success-container {
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.contact-success-icon {
+  display: inline-flex;
+  height: 4rem;
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgb(34, 197, 94);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+  margin-bottom: 1rem;
+}
+
+.contact-success-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(21, 128, 61);
+}
+
+.dark .contact-success-title {
+  color: rgb(74, 222, 128);
+}
+
+.contact-success-message {
+  color: rgb(22, 163, 74);
+}
+
+.dark .contact-success-message {
+  color: rgb(134, 239, 172);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Office Info */
+.contact-info-container {
+  border-radius: 1rem;
+  border: 1px solid;
+  background: var(--card);
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-icon-container {
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+}
+
+.contact-info-icon-blue {
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+}
+
+.contact-info-icon-purple {
+  background: linear-gradient(135deg, rgb(251, 146, 60), rgb(255, 107, 0));
+}
+
+.contact-info-icon-green {
+  background: linear-gradient(135deg, rgb(34, 197, 94), rgb(16, 185, 129));
+}
+
+.contact-info-icon-orange {
+  background: linear-gradient(135deg, rgb(249, 115, 22), rgb(239, 68, 68));
+}
+
+/* Map Container */
+.contact-map-container {
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-map-placeholder {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: linear-gradient(135deg, rgb(255, 247, 237), rgb(254, 243, 199));
+}
+
+.dark .contact-map-placeholder {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.2), rgba(217, 119, 6, 0.2));
+}
+
+.contact-map-icon-container {
+  display: flex;
+  height: 6rem;
+  width: 6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  margin: 0 auto 1rem;
+}
+
+.contact-map-orb-top {
+  position: absolute;
+  right: -3rem;
+  top: -3rem;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+  opacity: 0.3;
+  filter: blur(48px);
+}
+
+.contact-map-orb-bottom {
+  position: absolute;
+  bottom: -3rem;
+  left: -3rem;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(251, 146, 60), rgb(217, 119, 6));
+  opacity: 0.3;
+  filter: blur(48px);
+}
+
+.contact-map-info {
+  border-top: 1px solid;
+  background: var(--card);
+  padding: 1rem;
+}
+
+/* FAQ Items */
+.contact-faq-item {
+  border-radius: 0.75rem;
+  border: 1px solid;
+  background: var(--card);
+  padding: 1.5rem;
+}
+
+/* Social Links Section */
+.contact-social-section {
+  border-top: 1px solid;
+  background: rgba(var(--muted), 0.3);
+  padding: 3rem 0;
+}
+
+.contact-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  border: 2px solid;
+  background: var(--background);
+  padding: 1rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-social-link:hover {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-social-link svg {
+  transition: transform 0.3s ease;
+}
+
+.contact-social-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Add your custom contact page styles below this line */
+/* ===================================================== */

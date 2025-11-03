@@ -1,0 +1,164 @@
+PUBLIC FOLDER STRUCTURE
+=======================
+
+public/
+│
+├── 📚 DOCUMENTATION
+│   ├── INDEX.md                        # Start here! Quick navigation
+│   ├── README.md                       # Complete documentation
+│   ├── QUICK-START.md                 # Fast reference guide
+│   └── STRUCTURE.txt                   # This file
+│
+├── 🎨 CSS
+│   ├── CSS-CLASSES-REFERENCE.md       # All available CSS classes
+│   │
+│   ├── pages/                          # Page-specific styles
+│   │   ├── home.css                   # Homepage custom styles
+│   │   ├── services.css               # Services page styles  
+│   │   ├── pricing.css                # Pricing page styles
+│   │   ├── about.css                  # About page styles
+│   │   ├── contact.css                # Contact page styles
+│   │   └── blog.css                   # Blog page styles
+│   │
+│   └── components/                     # Reusable component styles
+│       ├── header.css                 # Site header/navigation
+│       ├── footer.css                 # Site footer
+│       └── cta.css                    # Call-to-action buttons
+│
+├── 🖼️  IMAGES
+│   ├── IMAGE-GUIDE.md                 # Image management guide
+│   │
+│   ├── home/                          # Homepage images
+│   │   └── .gitkeep                   # (Add hero images here)
+│   │
+│   ├── services/                      # Services page images
+│   │   └── .gitkeep                   # (Add service images here)
+│   │
+│   ├── pricing/                       # Pricing page images
+│   │   └── .gitkeep                   # (Add pricing visuals here)
+│   │
+│   ├── about/                         # About/team images
+│   │   └── .gitkeep                   # (Add team photos here)
+│   │
+│   ├── contact/                       # Contact page images
+│   │   └── .gitkeep                   # (Add contact images here)
+│   │
+│   ├── blog/                          # Blog post images
+│   │   └── .gitkeep                   # (Add blog images here)
+│   │
+│   └── common/                        # Shared images
+│       └── .gitkeep                   # (Add logos, icons here)
+│
+└── 🔤 FONTS
+    └── (Place custom web fonts here)
+
+
+QUICK ACCESS
+============
+
+Want to update...                  Edit this file...
+─────────────────────────────────────────────────────
+Homepage styles                    css/pages/home.css
+Services styles                    css/pages/services.css
+Pricing styles                     css/pages/pricing.css
+About page styles                  css/pages/about.css
+Contact page styles                css/pages/contact.css
+Blog styles                        css/pages/blog.css
+Header/Nav styles                  css/components/header.css
+Footer styles                      css/components/footer.css
+Button/CTA styles                  css/components/cta.css
+
+
+Need to add...                    Place in folder...
+─────────────────────────────────────────────────────
+Hero image                         images/home/
+Service images                     images/services/
+Team photos                        images/about/
+Blog post images                   images/blog/
+Logo/icons                         images/common/
+Custom fonts                       fonts/
+
+
+FILE NAMING CONVENTIONS
+=======================
+
+CSS Files:
+  ✅ Lowercase with hyphens: custom-styles.css
+  ✅ Descriptive names: hero-animations.css
+
+Image Files:
+  ✅ Lowercase with hyphens: team-photo-2024.jpg
+  ✅ Include context: hero-home-desktop.jpg
+  ✅ Add dimensions: logo-512x128.png
+
+Font Files:
+  ✅ Include weight/style: roboto-bold.woff2
+  ✅ Use web formats: .woff2, .woff
+
+
+GETTING STARTED
+===============
+
+1. New to the project?
+   └─ Read: INDEX.md
+
+2. Making quick changes?
+   └─ Read: QUICK-START.md
+
+3. Need CSS reference?
+   └─ Read: css/CSS-CLASSES-REFERENCE.md
+
+4. Working with images?
+   └─ Read: images/IMAGE-GUIDE.md
+
+5. Want everything?
+   └─ Read: README.md
+
+
+COMMON WORKFLOWS
+================
+
+Update Page Styles:
+1. Open css/pages/[page-name].css
+2. Add styles at bottom of file
+3. Save and refresh browser
+
+Add Local Image:
+1. Add image to images/[page-name]/
+2. Update src/lib/images.ts
+3. Verify on website
+
+Customize Component:
+1. Open css/components/[component].css
+2. Modify or add classes
+3. Apply in component files
+
+
+HELP & SUPPORT
+==============
+
+Issue                              See...
+─────────────────────────────────────────────────────
+CSS not applying                   QUICK-START.md → Troubleshooting
+Image not showing                  IMAGE-GUIDE.md → Troubleshooting
+Available CSS classes              CSS-CLASSES-REFERENCE.md
+Image optimization                 IMAGE-GUIDE.md → Optimization
+Naming conventions                 IMAGE-GUIDE.md → Naming
+
+
+EXTERNAL LINKS
+==============
+
+• Tailwind CSS: https://tailwindcss.com/docs
+• Next.js Images: https://nextjs.org/docs/basic-features/image-optimization
+• MDN CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+• Browser Support: https://caniuse.com/
+
+
+═══════════════════════════════════════════════════
+
+Project: Orchid SaaS Website
+Updated: November 2024
+Server: http://localhost:3003
+
+Happy coding! 🚀

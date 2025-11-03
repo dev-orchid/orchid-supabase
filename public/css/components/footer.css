@@ -1,0 +1,93 @@
+/**
+ * Footer Component Styles
+ */
+
+/* Footer Container */
+.site-footer {
+  @apply border-t bg-muted/40;
+}
+
+.footer-container {
+  @apply container mx-auto px-4 py-12 lg:py-16;
+}
+
+/* Footer Grid */
+.footer-grid {
+  @apply grid gap-8 sm:grid-cols-2 lg:grid-cols-6;
+}
+
+/* Company Info Section */
+.footer-company-section {
+  @apply sm:col-span-2 lg:col-span-2;
+}
+
+.footer-logo {
+  @apply mb-6 inline-block transition-transform hover:scale-105;
+}
+
+.footer-logo-image {
+  @apply h-16 w-auto;
+}
+
+.footer-description {
+  @apply mb-4 text-sm text-muted-foreground;
+}
+
+.footer-contact-info {
+  @apply space-y-2 text-sm text-muted-foreground;
+}
+
+.footer-contact-item {
+  @apply flex items-center gap-2;
+}
+
+.footer-contact-icon {
+  @apply h-4 w-4;
+}
+
+.footer-contact-link {
+  @apply hover:text-foreground;
+}
+
+/* Footer Sections */
+.footer-section-heading {
+  @apply mb-4 text-sm font-semibold uppercase tracking-wider;
+}
+
+.footer-section-list {
+  @apply space-y-2 text-sm;
+}
+
+.footer-link {
+  @apply text-muted-foreground transition-colors hover:text-primary;
+}
+
+/* Social Media & Copyright Section */
+.footer-bottom {
+  @apply mt-12 flex flex-col items-center justify-between gap-6 border-t pt-8 md:flex-row;
+}
+
+.footer-social-container {
+  @apply flex flex-wrap gap-4;
+}
+
+.footer-social-icon {
+  @apply flex h-10 w-10 items-center justify-center rounded-lg border bg-background text-muted-foreground transition-all hover:border-primary hover:text-primary hover:shadow-md;
+}
+
+.footer-social-icon-svg {
+  @apply h-5 w-5;
+}
+
+/* Copyright */
+.footer-copyright {
+  @apply text-center text-sm text-muted-foreground md:text-right;
+}
+
+.footer-copyright-text {
+  @apply mt-1;
+}
+
+.footer-sitemap-link {
+  @apply hover:text-primary;
+}

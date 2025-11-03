@@ -1,0 +1,48 @@
+/**
+ * Home Page Custom Styles
+ *
+ * This file contains custom CSS for the home page.
+ * These styles will be loaded in addition to Tailwind CSS.
+ *
+ * Usage: Import this file in your home page component
+ * import '@/../../public/css/pages/home.css';
+ */
+
+/* Hero Section Custom Styles */
+.hero-gradient-overlay {
+  /* Custom gradient for hero background */
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+}
+
+/* Hero Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.hero-float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom hover effects for hero buttons */
+.hero-button-gradient:hover {
+  background-position: right center;
+  transition: background-position 0.5s ease;
+}
+
+/* Trust indicators custom styling */
+.trust-badge {
+  /* Add your custom trust badge styles here */
+}
+
+/* Stats section */
+.stats-highlight {
+  /* Add custom styles for stats numbers */
+}
+
+/* Add your custom home page styles below this line */
+/* ================================================ */

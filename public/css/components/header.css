@@ -1,0 +1,91 @@
+/**
+ * Header Component Styles
+ */
+
+/* Header Container */
+.site-header {
+  @apply sticky top-0 z-50 w-full border-b transition-all duration-200;
+}
+
+.site-header.scrolled {
+  @apply bg-background/95 shadow-md backdrop-blur supports-[backdrop-filter]:bg-background/95;
+}
+
+.site-header.not-scrolled {
+  @apply bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+}
+
+/* Navigation Container */
+.nav-container {
+  @apply container mx-auto flex h-16 items-center justify-between px-4;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      height: 5rem;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 1rem;
+      padding-right: 1rem;
+}
+
+/* Logo */
+.site-logo {
+  @apply flex items-center transition-transform hover:scale-105;
+}
+
+.logo-image {
+  @apply h-14 w-auto;
+  height: 12rem;
+    width: auto
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  @apply hidden items-center gap-1 lg:flex;
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-sm font-medium transition-colors hover:text-primary;
+}
+
+.nav-link.active {
+  @apply text-primary;
+}
+
+.nav-link-indicator {
+  @apply absolute bottom-0 left-0 h-0.5 w-full bg-primary;
+}
+
+.nav-link.inactive {
+  @apply text-muted-foreground;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  @apply lg:hidden;
+}
+
+.mobile-menu-icon {
+  @apply h-6 w-6 transition-transform;
+}
+
+/* Mobile Navigation */
+.mobile-menu {
+  @apply animate-in slide-in-from-top border-b bg-background p-4 shadow-lg lg:hidden;
+}
+
+.mobile-menu-container {
+  @apply flex flex-col gap-2;
+}
+
+.mobile-nav-link {
+  @apply rounded-lg px-4 py-3 text-sm font-medium transition-all;
+}
+
+.mobile-nav-link.active {
+  @apply bg-primary/10 text-primary;
+}
+
+.mobile-nav-link.inactive {
+  @apply text-muted-foreground hover:bg-muted hover:text-primary;
+}

@@ -1,0 +1,181 @@
+---
+title: "Best Practices for API Security in 2024"
+excerpt: "Explore essential security measures to protect your APIs from common vulnerabilities and threats."
+author: "Michael Rodriguez"
+date: "2024-10-28"
+category: "Security"
+image: "/images/blog/api-security.jpg"
+tags: ["Security", "API", "Authentication", "Best Practices"]
+---
+
+# Best Practices for API Security in 2024
+
+API security is more critical than ever. With the increasing number of API-based attacks, implementing robust security measures is essential for protecting your applications and users.
+
+## Understanding API Security Threats
+
+Before diving into solutions, let's understand the most common threats:
+
+- **Injection Attacks**: SQL, NoSQL, and command injection
+- **Broken Authentication**: Weak authentication mechanisms
+- **Excessive Data Exposure**: APIs returning more data than necessary
+- **Rate Limiting Issues**: Lack of proper rate limiting leading to abuse
+- **Security Misconfiguration**: Default configurations and exposed endpoints
+
+## Essential Security Measures
+
+### 1. Implement Strong Authentication
+
+Always use industry-standard authentication methods:
+
+```typescript
+import { sign, verify } from "jsonwebtoken";
+
+export function generateToken(userId: string): string {
+  return sign(
+    { userId, exp: Math.floor(Date.now() / 1000) + 3600 },
+    process.env.JWT_SECRET!
+  );
+}
+
+export function verifyToken(token: string): { userId: string } | null {
+  try {
+    return verify(token, process.env.JWT_SECRET!) as { userId: string };
+  } catch {
+    return null;
+  }
+}
+```
+
+### 2. Rate Limiting
+
+Protect your API from abuse with rate limiting:
+
+```typescript
+import rateLimit from "express-rate-limit";
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP",
+});
+
+app.use("/api/", limiter);
+```
+
+### 3. Input Validation
+
+Never trust user input. Always validate and sanitize:
+
+```typescript
+import { z } from "zod";
+
+const userSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+  name: z.string().min(2).max(50),
+});
+
+export function validateUserInput(data: unknown) {
+  return userSchema.safeParse(data);
+}
+```
+
+## HTTPS Everywhere
+
+Always use HTTPS for all API communications:
+
+```nginx
+server {
+  listen 443 ssl http2;
+  ssl_certificate /path/to/cert.pem;
+  ssl_certificate_key /path/to/key.pem;
+  ssl_protocols TLSv1.2 TLSv1.3;
+  ssl_ciphers HIGH:!aNULL:!MD5;
+}
+```
+
+## CORS Configuration
+
+Properly configure CORS to prevent unauthorized access:
+
+```typescript
+const corsOptions = {
+  origin: process.env.ALLOWED_ORIGINS?.split(",") || [],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  maxAge: 86400,
+};
+
+app.use(cors(corsOptions));
+```
+
+## API Keys and Secrets Management
+
+Never hardcode secrets. Use environment variables and secret management services:
+
+```typescript
+// .env
+API_KEY=your-secret-key
+DATABASE_URL=postgresql://...
+JWT_SECRET=your-jwt-secret
+
+// Load secrets securely
+import { config } from "dotenv";
+config();
+
+const apiKey = process.env.API_KEY;
+```
+
+## Logging and Monitoring
+
+Implement comprehensive logging:
+
+```typescript
+import winston from "winston";
+
+const logger = winston.createLogger({
+  level: "info",
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "combined.log" }),
+  ],
+});
+
+export function logApiRequest(req: Request, res: Response) {
+  logger.info({
+    method: req.method,
+    path: req.path,
+    ip: req.ip,
+    statusCode: res.statusCode,
+    timestamp: new Date().toISOString(),
+  });
+}
+```
+
+## Security Headers
+
+Add security headers to all responses:
+
+```typescript
+import helmet from "helmet";
+
+app.use(helmet());
+
+// Or manually set headers
+app.use((req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "DENY");
+  res.setHeader("X-XSS-Protection", "1; mode=block");
+  res.setHeader("Strict-Transport-Security", "max-age=31536000");
+  next();
+});
+```
+
+## Conclusion
+
+API security requires a multi-layered approach. By implementing these best practices, you can significantly reduce the risk of security breaches and protect your users' data.
+
+Remember: security is not a one-time implementation but an ongoing process that requires regular updates and audits.

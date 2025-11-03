@@ -1,0 +1,145 @@
+/**
+ * Pricing Page Custom Styles
+ *
+ * This file contains custom CSS for the pricing page.
+ * These styles will be loaded in addition to Tailwind CSS.
+ *
+ * Usage: Import this file in your pricing page component
+ * import '../../../public/css/pages/pricing.css';
+ */
+
+/* Hero Section */
+.pricing-hero-section {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid;
+  background: linear-gradient(135deg, rgb(255, 247, 237) 0%, rgb(254, 243, 199) 50%, rgb(253, 230, 138) 100%);
+}
+
+.dark .pricing-hero-section {
+  background: linear-gradient(135deg, rgb(17, 24, 39) 0%, rgba(234, 88, 12, 0.2) 50%, rgba(217, 119, 6, 0.2) 100%);
+}
+
+.pricing-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgb(226, 232, 240) 1px, transparent 1px),
+                    linear-gradient(90deg, rgb(226, 232, 240) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(0deg, white, rgba(255, 255, 255, 0.6));
+}
+
+.dark .pricing-hero-grid-bg {
+  background-image: linear-gradient(rgba(51, 65, 85, 0.25) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
+}
+
+/* Pricing Badge */
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  background: rgba(255, 107, 0, 0.1);
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Pricing Cards */
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.pricing-card:hover {
+  border-color: rgba(255, 107, 0, 0.5);
+}
+
+.pricing-card-popular {
+  border: 2px solid var(--primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+/* Popular Badge */
+.pricing-popular-badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgb(255, 107, 0), rgb(251, 146, 60));
+  padding: 0.25rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.5);
+}
+
+/* Price Display */
+.pricing-amount {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.pricing-cycle {
+  color: var(--muted-foreground);
+}
+
+/* Feature List */
+.pricing-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pricing-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.pricing-feature-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  flex-shrink: 0;
+  color: rgb(22, 163, 74); /* green-600 */
+}
+
+.dark .pricing-feature-icon {
+  color: rgb(34, 197, 94); /* green-500 */
+}
+
+.pricing-feature-text {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* Trial Notice */
+.pricing-trial-notice {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.pricing-trial-notice-highlight {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+/* Add your custom pricing page styles below this line */
+/* ==================================================== */

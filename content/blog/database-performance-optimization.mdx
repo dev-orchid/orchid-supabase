@@ -1,0 +1,242 @@
+---
+title: "Optimizing Database Performance at Scale"
+excerpt: "Discover proven techniques for improving database performance and handling high-traffic applications."
+author: "David Kim"
+date: "2024-10-25"
+category: "Database"
+image: "/images/blog/database-performance.jpg"
+tags: ["Database", "Performance", "PostgreSQL", "Optimization"]
+---
+
+# Optimizing Database Performance at Scale
+
+As your application grows, database performance becomes increasingly critical. In this guide, we'll explore proven techniques to optimize your database for high-traffic scenarios.
+
+## Understanding Database Bottlenecks
+
+Common performance issues include:
+
+- Slow queries and missing indexes
+- Connection pool exhaustion
+- Lock contention
+- Inefficient schema design
+- Lack of caching strategy
+
+## Query Optimization
+
+### 1. Use Indexes Wisely
+
+Create indexes for frequently queried columns:
+
+```sql
+-- Create index on user email for faster lookups
+CREATE INDEX idx_users_email ON users(email);
+
+-- Composite index for common query patterns
+CREATE INDEX idx_posts_author_date ON posts(author_id, created_at DESC);
+
+-- Partial index for active records only
+CREATE INDEX idx_active_users ON users(status) WHERE status = 'active';
+```
+
+### 2. Analyze Query Plans
+
+Always check your query execution plans:
+
+```sql
+EXPLAIN ANALYZE
+SELECT u.name, COUNT(p.id) as post_count
+FROM users u
+LEFT JOIN posts p ON u.id = p.author_id
+WHERE u.created_at > NOW() - INTERVAL '30 days'
+GROUP BY u.id, u.name
+ORDER BY post_count DESC
+LIMIT 10;
+```
+
+### 3. Optimize Joins
+
+```sql
+-- Bad: Multiple subqueries
+SELECT *
+FROM users
+WHERE id IN (
+  SELECT author_id FROM posts WHERE published = true
+)
+AND id IN (
+  SELECT user_id FROM subscriptions WHERE active = true
+);
+
+-- Good: Single JOIN
+SELECT DISTINCT u.*
+FROM users u
+INNER JOIN posts p ON u.id = p.author_id
+INNER JOIN subscriptions s ON u.id = s.user_id
+WHERE p.published = true AND s.active = true;
+```
+
+## Connection Pooling
+
+Implement efficient connection pooling with Prisma:
+
+```typescript
+import { PrismaClient } from "@prisma/client";
+
+declare global {
+  var prisma: PrismaClient | undefined;
+}
+
+export const prisma =
+  global.prisma ||
+  new PrismaClient({
+    log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
+  });
+
+if (process.env.NODE_ENV !== "production") {
+  global.prisma = prisma;
+}
+
+// Configure connection pool
+const prismaWithPool = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL,
+    },
+  },
+  // Connection pool settings
+  connectionLimit: 10,
+});
+```
+
+## Caching Strategies
+
+### 1. Application-Level Caching
+
+```typescript
+import { Redis } from "ioredis";
+
+const redis = new Redis(process.env.REDIS_URL);
+
+export async function getCachedUser(userId: string) {
+  // Try cache first
+  const cached = await redis.get(`user:${userId}`);
+  if (cached) {
+    return JSON.parse(cached);
+  }
+
+  // Cache miss - fetch from database
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+  });
+
+  // Store in cache with 1 hour expiry
+  await redis.setex(`user:${userId}`, 3600, JSON.stringify(user));
+
+  return user;
+}
+```
+
+### 2. Query Result Caching
+
+```typescript
+export async function getPopularPosts(limit = 10) {
+  const cacheKey = `popular-posts:${limit}`;
+  const cached = await redis.get(cacheKey);
+
+  if (cached) {
+    return JSON.parse(cached);
+  }
+
+  const posts = await prisma.post.findMany({
+    take: limit,
+    orderBy: { views: "desc" },
+    include: { author: true },
+  });
+
+  await redis.setex(cacheKey, 300, JSON.stringify(posts)); // 5 minutes
+
+  return posts;
+}
+```
+
+## Database Sharding
+
+For massive scale, consider sharding:
+
+```typescript
+function getShardId(userId: string): number {
+  // Simple hash-based sharding
+  const hash = userId.split("").reduce((acc, char) => {
+    return ((acc << 5) - acc) + char.charCodeAt(0);
+  }, 0);
+
+  return Math.abs(hash) % TOTAL_SHARDS;
+}
+
+export async function getUserFromShard(userId: string) {
+  const shardId = getShardId(userId);
+  const shardClient = getShardClient(shardId);
+
+  return shardClient.user.findUnique({
+    where: { id: userId },
+  });
+}
+```
+
+## Read Replicas
+
+Distribute read load across replicas:
+
+```typescript
+import { PrismaClient } from "@prisma/client";
+
+const primaryDb = new PrismaClient({
+  datasources: { db: { url: process.env.PRIMARY_DATABASE_URL } },
+});
+
+const replicaDb = new PrismaClient({
+  datasources: { db: { url: process.env.REPLICA_DATABASE_URL } },
+});
+
+// Use replica for reads
+export async function getUsers() {
+  return replicaDb.user.findMany();
+}
+
+// Use primary for writes
+export async function createUser(data: any) {
+  return primaryDb.user.create({ data });
+}
+```
+
+## Monitoring and Alerts
+
+Set up monitoring to track performance:
+
+```typescript
+import { performance } from "perf_hooks";
+
+export async function measureQueryTime(queryName: string, queryFn: () => Promise<any>) {
+  const start = performance.now();
+
+  try {
+    const result = await queryFn();
+    const duration = performance.now() - start;
+
+    if (duration > 1000) {
+      console.warn(`Slow query detected: ${queryName} took ${duration}ms`);
+    }
+
+    return result;
+  } catch (error) {
+    console.error(`Query failed: ${queryName}`, error);
+    throw error;
+  }
+}
+```
+
+## Conclusion
+
+Database optimization is an iterative process. Start by identifying bottlenecks, implement appropriate solutions, and continuously monitor performance. With these techniques, your application can handle significant scale while maintaining fast response times.
+
+Remember to always test performance improvements in a staging environment before deploying to production.

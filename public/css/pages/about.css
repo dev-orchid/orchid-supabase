@@ -1,0 +1,336 @@
+/**
+ * About Page Custom Styles
+ *
+ * This file contains custom CSS for the about page.
+ * These styles will be loaded in addition to Tailwind CSS.
+ *
+ * Usage: Import this file in your about page component
+ * import '../../../public/css/pages/about.css';
+ */
+
+/* Mission Hero Section */
+.about-hero-section {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid;
+  background: linear-gradient(135deg, rgb(255, 247, 237) 0%, rgb(254, 243, 199) 50%, rgb(253, 230, 138) 100%);
+}
+
+.dark .about-hero-section {
+  background: linear-gradient(135deg, rgb(17, 24, 39) 0%, rgba(234, 88, 12, 0.2) 50%, rgba(217, 119, 6, 0.2) 100%);
+}
+
+.about-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgb(226, 232, 240) 1px, transparent 1px),
+                    linear-gradient(90deg, rgb(226, 232, 240) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(0deg, white, rgba(255, 255, 255, 0.6));
+}
+
+.dark .about-hero-grid-bg {
+  background-image: linear-gradient(rgba(51, 65, 85, 0.25) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
+}
+
+/* About Badge */
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  background: rgba(255, 107, 0, 0.1);
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Team Photo Banner */
+.about-team-banner {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid rgba(255, 107, 0, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.about-team-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+}
+
+/* Mission Cards */
+.mission-card {
+  border-radius: 1rem;
+  border: 1px solid;
+  background: rgba(var(--background), 0.5);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.mission-icon-container {
+  display: inline-flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.mission-icon-container-blue {
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+}
+
+.mission-icon-container-purple {
+  background: linear-gradient(135deg, rgb(251, 146, 60), rgb(255, 107, 0));
+}
+
+.mission-icon-container-green {
+  background: linear-gradient(135deg, rgb(34, 197, 94), rgb(16, 185, 129));
+}
+
+/* Values Section */
+.value-card {
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  background: var(--card);
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-card:hover {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon-container {
+  display: inline-flex;
+  height: 4rem;
+  width: 4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.3);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover .value-icon-container {
+  transform: scale(1.1);
+}
+
+/* Statistics Section */
+.about-stats-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgb(234, 88, 12), rgb(249, 115, 22), rgb(251, 146, 60));
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .about-stats-section {
+    padding: 7rem 0;
+  }
+}
+
+.about-stats-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(0deg, white, rgba(255, 255, 255, 0.6));
+}
+
+.about-stats-orb-top {
+  position: absolute;
+  top: -6rem;
+  left: -6rem;
+  height: 24rem;
+  width: 24rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  filter: blur(96px);
+}
+
+.about-stats-orb-bottom {
+  position: absolute;
+  bottom: -6rem;
+  right: -6rem;
+  height: 24rem;
+  width: 24rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  filter: blur(96px);
+}
+
+.stat-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.stat-icon-container {
+  display: inline-flex;
+  height: 3.5rem;
+  width: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-container {
+  transform: scale(1.1);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-label {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.stat-description {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stats-additional-container {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .stats-additional-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Team Section */
+.team-section-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid;
+  background: var(--background);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.team-member-card {
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  background: var(--card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member-card:hover {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-image-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(135deg, rgb(255, 247, 237), rgb(254, 243, 199));
+}
+
+.dark .team-member-image-container {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.2), rgba(217, 119, 6, 0.2));
+}
+
+.team-member-avatar {
+  display: flex;
+  height: 8rem;
+  width: 8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  margin: 0 auto 1rem;
+}
+
+.team-member-orb-top {
+  position: absolute;
+  right: -2rem;
+  top: -2rem;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(255, 107, 0), rgb(251, 146, 60));
+  opacity: 0.3;
+  filter: blur(32px);
+}
+
+.team-member-orb-bottom {
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgb(251, 146, 60), rgb(217, 119, 6));
+  opacity: 0.3;
+  filter: blur(32px);
+}
+
+.team-social-link {
+  border-radius: 0.5rem;
+  border: 1px solid;
+  padding: 0.5rem;
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+}
+
+.team-social-link:hover {
+  border-color: var(--primary);
+  background: rgba(255, 107, 0, 0.1);
+  color: var(--primary);
+}
+
+/* Add your custom about page styles below this line */
+/* =================================================== */
