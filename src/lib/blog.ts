@@ -36,7 +36,7 @@ export function getAllPostSlugs(): string[] {
     return fileNames
       .filter((fileName) => fileName.endsWith(".mdx"))
       .map((fileName) => fileName.replace(/\.mdx$/, ""));
-  } catch (error) {
+  } catch (_error) {
     return [];
   }
 }
@@ -60,7 +60,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       image: data.image,
       tags: data.tags || [],
     };
-  } catch (error) {
+  } catch (_error) {
     return null;
   }
 }
@@ -73,7 +73,8 @@ export function getAllPosts(): BlogPostMetadata[] {
       if (!post) return null;
 
       // Return only metadata (exclude content)
-      const { content, ...metadata } = post;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { content: _content, ...metadata } = post;
       return metadata;
     })
     .filter((post): post is BlogPostMetadata => post !== null)

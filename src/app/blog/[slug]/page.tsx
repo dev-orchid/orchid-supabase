@@ -60,41 +60,41 @@ function formatDate(dateString: string): string {
 const mdxOptions = {
   mdxOptions: {
     rehypePlugins: [
-      rehypeHighlight,
-      rehypeSlug,
+      rehypeHighlight as any,
+      rehypeSlug as any,
       [
-        rehypeAutolinkHeadings,
+        rehypeAutolinkHeadings as any,
         {
           behavior: "wrap",
           properties: {
             className: ["anchor"],
           },
         },
-      ],
+      ] as any,
     ],
   },
 };
 
 const mdxComponents = {
-  h1: (props: any) => <h1 className="blog-post-h1" {...props} />,
-  h2: (props: any) => <h2 className="blog-post-h2" {...props} />,
-  h3: (props: any) => <h3 className="blog-post-h3" {...props} />,
-  h4: (props: any) => <h4 className="blog-post-h4" {...props} />,
-  p: (props: any) => <p className="blog-post-paragraph" {...props} />,
-  ul: (props: any) => <ul className="blog-post-ul" {...props} />,
-  ol: (props: any) => <ol className="blog-post-ol" {...props} />,
-  li: (props: any) => <li className="blog-post-li" {...props} />,
-  a: (props: any) => <a className="blog-post-link" {...props} />,
-  code: (props: any) => {
-    const { className, children } = props;
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className="blog-post-h1" {...props} />,
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 className="blog-post-h2" {...props} />,
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h3 className="blog-post-h3" {...props} />,
+  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h4 className="blog-post-h4" {...props} />,
+  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <p className="blog-post-paragraph" {...props} />,
+  ul: (props: React.HTMLAttributes<HTMLUListElement>) => <ul className="blog-post-ul" {...props} />,
+  ol: (props: React.HTMLAttributes<HTMLOListElement>) => <ol className="blog-post-ol" {...props} />,
+  li: (props: React.LiHTMLAttributes<HTMLLIElement>) => <li className="blog-post-li" {...props} />,
+  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => <a className="blog-post-link" {...props} />,
+  code: (props: React.HTMLAttributes<HTMLElement>) => {
+    const { className } = props;
     const isInline = !className;
     if (isInline) {
       return <code className="blog-post-code-inline" {...props} />;
     }
     return <code className={className} {...props} />;
   },
-  pre: (props: any) => <pre className="blog-post-pre" {...props} />,
-  blockquote: (props: any) => <blockquote className="blog-post-blockquote" {...props} />,
+  pre: (props: React.HTMLAttributes<HTMLPreElement>) => <pre className="blog-post-pre" {...props} />,
+  blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => <blockquote className="blog-post-blockquote" {...props} />,
 };
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {

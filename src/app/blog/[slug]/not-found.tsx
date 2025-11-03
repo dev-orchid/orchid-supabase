@@ -17,7 +17,7 @@ export default function BlogNotFound() {
           <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
 
           <p className="text-lg text-muted-foreground mb-8">
-            Sorry, we couldn't find the blog post you're looking for. It may have been moved or deleted.
+            Sorry, we couldn&apos;t find the blog post you&apos;re looking for. It may have been moved or deleted.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

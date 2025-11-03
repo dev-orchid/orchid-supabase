@@ -13,7 +13,16 @@
 }
 
 .blog-post-hero-grid {
-  @apply absolute inset-0 bg-grid-slate-200 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25;
+  @apply absolute inset-0;
+  background-image: linear-gradient(rgb(226, 232, 240) 1px, transparent 1px),
+                    linear-gradient(90deg, rgb(226, 232, 240) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(0deg, white, rgba(255, 255, 255, 0.6));
+}
+
+.dark .blog-post-hero-grid {
+  background-image: linear-gradient(rgba(51, 65, 85, 0.25) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
 }
 
 .blog-post-hero-container {
@@ -99,7 +108,7 @@
 }
 
 .blog-post-article-prose {
-  @apply prose prose-lg prose-slate dark:prose-invert max-w-none;
+  @apply max-w-none;
 }
 
 /* MDX Component Styles */
