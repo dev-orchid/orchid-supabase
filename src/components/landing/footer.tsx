@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Twitter, Linkedin, Facebook, Instagram, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Facebook, Youtube, Mail, MapPin, Phone, MessageCircle, Send } from "lucide-react";
 import "../../../public/css/components/footer.css";
 
 export function Footer() {
@@ -12,7 +12,7 @@ export function Footer() {
           <div className="footer-company-section">
             <Link href="/" className="footer-logo">
               <Image
-                src="/images/logo/orchid_logo_color.png"
+                src="/images/logo/orhcid_logo_black_font.svg"
                 alt="Orchid Software"
                 width={160}
                 height={160}
@@ -95,26 +95,18 @@ export function Footer() {
         {/* Social Media & Copyright */}
         <div className="footer-bottom">
           <div className="footer-social-container">
+            
             <Link
-              href="https://twitter.com/orchid"
+              href="https://chat.whatsapp.com/KsXiw0Xd9hU7yQ8MsIotgY"
               className="footer-social-icon"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
+              aria-label="Whatsapp"
             >
-              <Twitter className="footer-social-icon-svg" />
+              <MessageCircle className="footer-social-icon-svg" />
             </Link>
             <Link
-              href="https://github.com/orchid"
-              className="footer-social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <Github className="footer-social-icon-svg" />
-            </Link>
-            <Link
-              href="https://linkedin.com/company/orchid"
+              href="https://linkedin.com/company/orchid-software"
               className="footer-social-icon"
               target="_blank"
               rel="noopener noreferrer"
@@ -123,7 +115,7 @@ export function Footer() {
               <Linkedin className="footer-social-icon-svg" />
             </Link>
             <Link
-              href="https://facebook.com/orchid"
+              href="https://www.facebook.com/orchidsw"
               className="footer-social-icon"
               target="_blank"
               rel="noopener noreferrer"
@@ -132,16 +124,16 @@ export function Footer() {
               <Facebook className="footer-social-icon-svg" />
             </Link>
             <Link
-              href="https://instagram.com/orchid"
+              href="https://t.me/orchid_software"
               className="footer-social-icon"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
+              aria-label="Telegram"
             >
-              <Instagram className="footer-social-icon-svg" />
+              <Send className="footer-social-icon-svg" />
             </Link>
             <Link
-              href="https://youtube.com/orchid"
+              href="#"
               className="footer-social-icon"
               target="_blank"
               rel="noopener noreferrer"

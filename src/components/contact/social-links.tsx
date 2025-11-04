@@ -1,11 +1,11 @@
-import { Twitter, Linkedin, Github, Facebook, Instagram, Youtube } from "lucide-react";
+import { MessageCircle, Linkedin, Send, Facebook, Youtube } from "lucide-react";
 
 const socialLinks = [
   {
-    name: "Twitter",
-    icon: Twitter,
-    url: "https://twitter.com/orchid",
-    color: "hover:text-[#1DA1F2] hover:bg-[#1DA1F2]/10",
+    name: "WhatsApp",
+    icon: MessageCircle,
+    url: "https://chat.whatsapp.com/KsXiw0Xd9hU7yQ8MsIotgY",
+    color: "hover:text-[#25D366] hover:bg-[#25D366]/10",
   },
   {
     name: "LinkedIn",
@@ -14,27 +14,21 @@ const socialLinks = [
     color: "hover:text-[#0A66C2] hover:bg-[#0A66C2]/10",
   },
   {
-    name: "GitHub",
-    icon: Github,
-    url: "https://github.com/orchid",
-    color: "hover:text-foreground hover:bg-muted",
-  },
-  {
     name: "Facebook",
     icon: Facebook,
-    url: "https://facebook.com/orchid",
+    url: "https://www.facebook.com/orchidsw",
     color: "hover:text-[#1877F2] hover:bg-[#1877F2]/10",
   },
   {
-    name: "Instagram",
-    icon: Instagram,
-    url: "https://instagram.com/orchid",
-    color: "hover:text-[#E4405F] hover:bg-[#E4405F]/10",
+    name: "Telegram",
+    icon: Send,
+    url: "https://t.me/orchid_software",
+    color: "hover:text-[#0088cc] hover:bg-[#0088cc]/10",
   },
   {
     name: "YouTube",
     icon: Youtube,
-    url: "https://youtube.com/orchid",
+    url: "#",
     color: "hover:text-[#FF0000] hover:bg-[#FF0000]/10",
   },
 ];

@@ -26,7 +26,8 @@
 }
 
 .footer-logo-image {
-  @apply h-16 w-auto;
+  height: 3.2rem;
+  width: auto;
 }
 
 .footer-description {
