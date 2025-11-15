@@ -27,7 +27,7 @@ export function PricingCard({
   ctaLink,
 }: PricingCardProps) {
   const price = isAnnual ? annualPrice : monthlyPrice;
-  const billingCycle = isAnnual ? "year" : "month";
+  const totalAnnualCost = annualPrice * 12;
 
   return (
     <Card
@@ -45,12 +45,12 @@ export function PricingCard({
         <CardDescription className="text-base">{description}</CardDescription>
         <div className="mt-4">
           <div className="flex items-baseline gap-2">
-            <span className="pricing-amount">${price}</span>
-            <span className="pricing-cycle">/{billingCycle}</span>
+            <span className="pricing-amount">${price.toLocaleString()}</span>
+            <span className="pricing-cycle">/month</span>
           </div>
           {isAnnual && (
             <p className="mt-2 text-sm text-muted-foreground">
-              Billed annually (${annualPrice}/year)
+              ${totalAnnualCost.toLocaleString()} billed annually
             </p>
           )}
           {!isAnnual && monthlyPrice > 0 && (

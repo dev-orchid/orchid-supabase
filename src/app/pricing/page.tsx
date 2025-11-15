@@ -16,7 +16,7 @@ const pricingPlans = [
     name: "Startup",
     description: "Perfect for startups and small projects",
     monthlyPrice: 2000,
-    annualPrice: 4500,
+    annualPrice: 1800,
     features: [
       "Up to 1 developers",
       "Part-time engagement (20 hrs/week)",
@@ -35,7 +35,7 @@ const pricingPlans = [
     name: "Growth",
     description: "For growing businesses that need dedicated teams",
     monthlyPrice: 6000,
-    annualPrice: 8800,
+    annualPrice: 5400,
     features: [
       "Up to 2 developers",
       "Full-time engagement (160 hrs/month)",
