@@ -22,7 +22,7 @@ export function InlineCTA({ variant = "default" }: InlineCTAProps) {
                 Ready to Get Started?
               </h3>
               <p className="text-muted-foreground">
-                Join 500+ companies building better software with Orchid.
+                Join 500+ companies building better software with Orchid Software.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -106,7 +106,7 @@ export function InlineCTA({ variant = "default" }: InlineCTAProps) {
           </div>
 
           <h3 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Experience the Power of Orchid
+            Experience the Power of Orchid Software
           </h3>
 
           <p className="mx-auto mt-4 max-w-2xl text-lg opacity-90">

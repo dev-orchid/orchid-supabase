@@ -48,7 +48,7 @@ export function Hero() {
                 className="group relative overflow-hidden bg-primary font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg h-16 px-10"
                 asChild
               >
-                <Link href="/signup">
+                <Link href="/pricing">
                   <span className="relative z-10 flex items-center">
                     Start Free Trial
                     <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />

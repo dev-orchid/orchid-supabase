@@ -4,8 +4,8 @@ import { Footer } from "@/components/landing/footer";
 import { Cookie } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy - Orchid",
-  description: "Learn about how Orchid uses cookies and similar technologies to enhance your experience.",
+  title: "Cookie Policy - Orchid Software",
+  description: "Learn about how Orchid Software uses cookies and similar technologies to enhance your experience.",
 };
 
 export default function CookiesPage() {

@@ -35,7 +35,7 @@ export function BannerCTA({ variant = "gradient" }: BannerCTAProps) {
                 </h2>
 
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Join the fastest-growing companies who trust Orchid to power their software
+                  Join the fastest-growing companies who trust Orchid Software to power their software
                   development. Get started in minutes, not weeks.
                 </p>
 
@@ -110,7 +110,7 @@ export function BannerCTA({ variant = "gradient" }: BannerCTAProps) {
                     </div>
                     <div>
                       <div className="text-sm font-semibold">500+ Companies</div>
-                      <div className="text-xs text-muted-foreground">Trust Orchid</div>
+                      <div className="text-xs text-muted-foreground">Trust Orchid Software</div>
                     </div>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export function BannerCTA({ variant = "gradient" }: BannerCTAProps) {
               </h2>
 
               <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
-                Join forward-thinking companies that are building the future with Orchid.
+                Join forward-thinking companies that are building the future with Orchid Software.
                 Get started today with our risk-free trial.
               </p>
 
@@ -290,7 +290,7 @@ export function BannerCTA({ variant = "gradient" }: BannerCTAProps) {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg opacity-90 sm:text-xl">
-              Start your journey with Orchid today. Join hundreds of companies transforming
+              Start your journey with Orchid Software today. Join hundreds of companies transforming
               their ideas into powerful SaaS products.
             </p>
 

@@ -9,16 +9,16 @@ import { MessageSquare, Headphones, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us - Get in Touch with Our Team",
   description:
-    "Have questions about our software engineering services? Contact Orchid today. We're here to help you build amazing SaaS products.",
+    "Have questions about our software engineering services? Contact Orchid Software today. We're here to help you build amazing SaaS products.",
   keywords: [
-    "contact orchid",
+    "contact orchid software",
     "get in touch",
     "support",
     "customer service",
     "sales inquiry",
   ],
   openGraph: {
-    title: "Contact Orchid - Get in Touch",
+    title: "Contact Orchid Software - Get in Touch",
     description: "Reach out to our team for questions, support, or to discuss your next project.",
     type: "website",
   },

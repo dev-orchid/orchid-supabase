@@ -144,7 +144,7 @@ export function Footer() {
           </div>
 
           <div className="footer-copyright">
-            <p>&copy; {new Date().getFullYear()} Orchid. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Orchid Software. All rights reserved.</p>
             
           </div>
         </div>

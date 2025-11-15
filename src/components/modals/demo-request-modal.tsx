@@ -103,7 +103,7 @@ export function DemoRequestModal({ open, onOpenChange }: DemoRequestModalProps) 
                 <span>Schedule a Demo</span>
               </div>
               <DialogTitle className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent leading-tight">
-                See Orchid in Action
+                See Orchid Software in Action
               </DialogTitle>
               <DialogDescription className="text-base text-muted-foreground">
                 Book a personalized platform walkthrough today.

@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Orchid - Expert Software Engineering Services",
-    template: "%s | Orchid",
+    default: "Orchid Software - Expert Software Engineering Services",
+    template: "%s | Orchid Software",
   },
   description: "Transform your business with our cutting-edge SaaS solution",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),

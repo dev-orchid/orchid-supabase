@@ -4,8 +4,8 @@ import { Footer } from "@/components/landing/footer";
 import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Orchid",
-  description: "Learn how Orchid collects, uses, and protects your personal information.",
+  title: "Privacy Policy - Orchid Software",
+  description: "Learn how Orchid Software collects, uses, and protects your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             <section className="mb-8">
               <h2 className="mb-4 text-2xl font-bold">1. Introduction</h2>
               <p className="mb-4 text-muted-foreground">
-                At Orchid, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
+                At Orchid Software, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
               </p>
               <p className="mb-4 text-muted-foreground">
                 Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access our services.

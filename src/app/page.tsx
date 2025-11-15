@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 import "../../public/css/pages/home.css";
 
 export const metadata: Metadata = {
-  title: "Orchid - Expert Software Engineering Services | SaaS Solutions",
+  title: "Orchid Software - Expert Software Engineering Services | SaaS Solutions",
   description:
     "Build powerful SaaS solutions with our world-class engineering team. From concept to deployment, we deliver scalable, secure, and innovative software. Start your free trial today.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "software development company",
   ],
   openGraph: {
-    title: "Orchid - Expert Software Engineering Services",
+    title: "Orchid Software - Expert Software Engineering Services",
     description:
       "Build powerful SaaS solutions with our world-class engineering team. Start your free trial today.",
     type: "website",

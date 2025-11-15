@@ -11,7 +11,7 @@ import "../../../public/css/pages/blog.css";
 export const metadata: Metadata = {
   title: "Blog - Insights & Updates",
   description:
-    "Stay updated with the latest insights, tutorials, and news from Orchid. Learn about software engineering best practices and industry trends.",
+    "Stay updated with the latest insights, tutorials, and news from Orchid Software. Learn about software engineering best practices and industry trends.",
   keywords: ["blog", "software engineering", "tutorials", "tech insights", "industry news"],
 };
 

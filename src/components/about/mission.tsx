@@ -11,7 +11,7 @@ export function Mission() {
         <div className="mx-auto max-w-4xl text-center">
           <div className="about-badge">
             <Target className="h-4 w-4 text-primary" />
-            <span className="text-primary">About Orchid</span>
+            <span className="text-primary">About Orchid Software</span>
           </div>
 
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">

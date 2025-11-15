@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} - Orchid Blog`,
+    title: `${post.title} - Orchid Software Blog`,
     description: post.excerpt,
     keywords: post.tags,
     openGraph: {
