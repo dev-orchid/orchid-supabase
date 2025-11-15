@@ -3,39 +3,45 @@ import { Check, X } from "lucide-react";
 
 const features = [
   {
-    category: "Core Features",
+    category: "Team & Engagement",
     items: [
-      { name: "API Access", starter: true, professional: true, enterprise: true },
-      { name: "Custom Domain", starter: false, professional: true, enterprise: true },
-      { name: "Advanced Analytics", starter: false, professional: true, enterprise: true },
-      { name: "Team Collaboration", starter: "5 users", professional: "25 users", enterprise: "Unlimited" },
+      { name: "Developers", startup: "1 developer", growth: "2 developers", enterprise: "6+ developers" },
+      { name: "Engagement Level", startup: "Part-time (20 hrs/week)", growth: "Full-time (160 hrs/month)", enterprise: "Dedicated team" },
+      { name: "Sprint Cycles", startup: "Bi-weekly", growth: "Weekly", enterprise: "Custom cadence" },
+      { name: "Project Manager", startup: false, growth: true, enterprise: true },
     ],
   },
   {
-    category: "Security & Compliance",
+    category: "Development Services",
     items: [
-      { name: "SSL Encryption", starter: true, professional: true, enterprise: true },
-      { name: "Two-Factor Auth", starter: true, professional: true, enterprise: true },
-      { name: "SSO/SAML", starter: false, professional: false, enterprise: true },
-      { name: "SOC 2 Compliance", starter: false, professional: true, enterprise: true },
+      { name: "Web/Mobile Development", startup: true, growth: true, enterprise: true },
+      { name: "Custom Software Development", startup: false, growth: true, enterprise: true },
+      { name: "Cloud Architecture & DevOps", startup: "Basic", growth: true, enterprise: true },
+      { name: "Database Design & Optimization", startup: false, growth: true, enterprise: true },
+      { name: "API Development & Integration", startup: false, growth: true, enterprise: true },
+      { name: "AI & Machine Learning", startup: false, growth: false, enterprise: true },
+      { name: "Microservices Architecture", startup: false, growth: false, enterprise: true },
     ],
   },
   {
-    category: "Support",
+    category: "Support & Management",
     items: [
-      { name: "Email Support", starter: true, professional: true, enterprise: true },
-      { name: "Priority Support", starter: false, professional: true, enterprise: true },
-      { name: "Phone Support", starter: false, professional: false, enterprise: true },
-      { name: "Dedicated Account Manager", starter: false, professional: false, enterprise: true },
+      { name: "Email & Chat Support", startup: true, growth: true, enterprise: true },
+      { name: "Priority Support", startup: false, growth: "24/5", enterprise: "24/7" },
+      { name: "Dedicated Account Manager", startup: false, growth: false, enterprise: true },
+      { name: "On-site Collaboration", startup: false, growth: false, enterprise: true },
     ],
   },
   {
-    category: "Advanced Features",
+    category: "Additional Features",
     items: [
-      { name: "API Rate Limit", starter: "1,000/day", professional: "10,000/day", enterprise: "Unlimited" },
-      { name: "Data Retention", starter: "30 days", professional: "1 year", enterprise: "Unlimited" },
-      { name: "Custom Integrations", starter: false, professional: "Limited", enterprise: true },
-      { name: "White Label", starter: false, professional: false, enterprise: true },
+      { name: "Code Repository Access", startup: true, growth: true, enterprise: true },
+      { name: "Technical Documentation", startup: "Basic", growth: true, enterprise: true },
+      { name: "Security Best Practices", startup: true, growth: true, enterprise: "Audits & Compliance" },
+      { name: "Performance Optimization", startup: false, growth: true, enterprise: true },
+      { name: "SLA Guarantees", startup: false, growth: false, enterprise: true },
+      { name: "Legacy System Migration", startup: false, growth: false, enterprise: true },
+      { name: "Technical Consulting", startup: false, growth: false, enterprise: true },
     ],
   },
 ];
@@ -70,10 +76,10 @@ export function FeatureComparison() {
               <thead className="bg-muted/50">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold">Feature</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold">Starter</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold">Startup</th>
                   <th className="px-6 py-4 text-center text-sm font-semibold">
                     <div className="inline-flex flex-col">
-                      <span>Professional</span>
+                      <span>Growth</span>
                       <span className="mt-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary">
                         Popular
                       </span>
@@ -97,10 +103,10 @@ export function FeatureComparison() {
                       <tr key={itemIndex} className="hover:bg-muted/20">
                         <td className="px-6 py-4 text-sm text-muted-foreground">{item.name}</td>
                         <td className="px-6 py-4 text-center">
-                          <FeatureCell value={item.starter} />
+                          <FeatureCell value={item.startup} />
                         </td>
                         <td className="bg-primary/5 px-6 py-4 text-center">
-                          <FeatureCell value={item.professional} />
+                          <FeatureCell value={item.growth} />
                         </td>
                         <td className="px-6 py-4 text-center">
                           <FeatureCell value={item.enterprise} />
